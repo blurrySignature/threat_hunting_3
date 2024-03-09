@@ -16,7 +16,8 @@
 
 1.  ОС Windows 11
 2.  Yandex Cloud: S3 Object Storage
-3.  Датасет **yaqry_dataset.pqt**
+3.  **Yandex Query**
+4.  Датасет **yaqry_dataset.pqt**
 
 **Общая ситуация**
 
@@ -62,7 +63,7 @@
 ##### 1. Известно, что IP адреса внутренней сети начинаются с октетов, принадлежащих интервалу \[12-14\]. Определите количество хостов внутренней сети, представленных в датасете
 
 ``` {SQL}
-SELECT COUNT(*) AS internal_hosts_count
+SELECT COUNT(DISTINCT(src)) AS internal_hosts_count
 FROM `1-nesterovp-biso-01`
 WHERE src REGEXP '(^1[2-4].)';
 ```
