@@ -62,7 +62,7 @@
 
 ##### 1. Известно, что IP адреса внутренней сети начинаются с октетов, принадлежащих интервалу \[12-14\]. Определите количество хостов внутренней сети, представленных в датасете
 
-``` {SQL}
+``` sql
 SELECT COUNT(DISTINCT(src)) AS internal_hosts_count
 FROM `1-nesterovp-biso-01`
 WHERE src REGEXP '(^1[2-4].)';
@@ -72,7 +72,7 @@ WHERE src REGEXP '(^1[2-4].)';
 
 ##### 2. Определите суммарный объём исходящего трафика
 
-``` {SQL}
+``` sql
 SELECT SUM(bytes) AS sum_of_outcoming_bytes
 FROM `1-nesterovp-biso-01`
 WHERE src REGEXP '(^1[2-4].)';
@@ -82,13 +82,19 @@ WHERE src REGEXP '(^1[2-4].)';
 
 ##### 3. Определите суммарный объём входящего трафика
 
-``` {SQL}
+``` sql
 SELECT SUM(bytes) AS sum_of_incoming_bytes
 FROM `1-nesterovp-biso-01`
 WHERE dst REGEXP '(^1[2-4].)';
 ```
 
 ![](screenshots/7.jpg)
+
+``` r
+sprintf("Done")
+```
+
+    [1] "Done"
 
 ## Оценка результатов
 
